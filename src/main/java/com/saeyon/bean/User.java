@@ -1,5 +1,7 @@
 package com.saeyon.bean;
 
+import java.util.StringJoiner;
+
 public class User {
     private String name;
 
@@ -38,5 +40,14 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
+                .add("name='" + name + "'")
+                .add("age=" + age)
+                .add("pet=" + pet)
+                .toString();
     }
 }

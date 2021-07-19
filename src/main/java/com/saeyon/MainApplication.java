@@ -18,7 +18,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class MainApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
-        String[] beanDefinitionNames = run.getBeanDefinitionNames();
+       /* String[] beanDefinitionNames = run.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             System.out.println(beanDefinitionName);
         }
@@ -45,7 +45,10 @@ public class MainApplication {
         String[] beanNamesForType1 = run.getBeanNamesForType(DBHelper.class);
         for (String s : beanNamesForType1) {
             System.out.println(s);
-        }
+        }*/
+        System.out.println("run.containsBean(\"myUser\") = " + run.containsBean("myUser"));
+//        System.out.println(run.getBean("myUser"));
+        System.out.println("run.containsBean(\"pet\") = " + run.containsBean("pet"));
 
     }
 }

@@ -3,6 +3,8 @@ package com.saeyon.config;
 import ch.qos.logback.core.db.DBHelper;
 import com.saeyon.bean.Pet;
 import com.saeyon.bean.User;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -17,13 +19,14 @@ public class SpringConfig {
 
 //    默认返回的是方法的名字
     @Bean
-    public User myUser(Pet pet) {
+    @ConditionalOnMissingBean(name = "pet", value = {Pet.class})
+    public User myUser() {
         User zs = new User("张三", 18);
-        zs.setPet(pet);
+        zs.setPet(pet());
         return zs;
     }
 
-    @Bean
+//    @Bean
     public Pet pet() {
         return new Pet("tomcat");
     }
