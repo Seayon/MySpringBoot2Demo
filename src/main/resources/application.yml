@@ -1,2 +1,5 @@
 server:
   port: 8888
+mycar:
+  price: 10000
+  brand: BMW宝马
