@@ -1,6 +1,7 @@
 package com.saeyon;
 
 
+import ch.qos.logback.core.db.DBHelper;
 import com.saeyon.bean.Pet;
 import com.saeyon.bean.User;
 import com.saeyon.config.SpringConfig;
@@ -8,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+//主程序类,住配置类,这里面也可以写配置
 //@SpringBootConfiguration
 //@EnableAutoConfiguration
 //@ComponentScan(excludeFilters = { @ComponentScan.Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),
@@ -36,8 +38,14 @@ public class MainApplication {
         System.out.println("pet == pet1 = " + (pet == pet1));
         System.out.println("configPet == pet1 = " + (configPet == pet1));
 
-
-
+        String[] beanNamesForType = run.getBeanNamesForType(User.class);
+        for (String s : beanNamesForType) {
+            System.out.println("s = " + s);
+        }
+        String[] beanNamesForType1 = run.getBeanNamesForType(DBHelper.class);
+        for (String s : beanNamesForType1) {
+            System.out.println(s);
+        }
 
     }
 }
