@@ -46,9 +46,13 @@ public class MainApplication {
         for (String s : beanNamesForType1) {
             System.out.println(s);
         }*/
+/*
         System.out.println("run.containsBean(\"myUser\") = " + run.containsBean("myUser"));
 //        System.out.println(run.getBean("myUser"));
         System.out.println("run.containsBean(\"pet\") = " + run.containsBean("pet"));
+*/
 
+        Pet tomInXml = run.getBean("tomInXml", Pet.class);
+        System.out.println("tomInXml = " + tomInXml);
     }
 }

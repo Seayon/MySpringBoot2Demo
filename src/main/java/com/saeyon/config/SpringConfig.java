@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 @Configuration(proxyBeanMethods = false) // 告诉 springbootve这是一个配置类 == 配置文件
 //proxyBeanMethods 默认是 true,full 模式,spring 会对这个配置类进行代理增强,后续有任何地方调用这个类的下面的获取 bean 的方法,都会返回容器中已经创建好的对象
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.Import;
 //但是 proxyBeanMethods 设置为 false,只是不增强 下面 myUser() 这个方法,用基于类型的 引入:比如下面的 myUser(Pet pet)还是会引入进来容器中已经存在的类
 //@Import 会自动给这个类导入列表中的类型的无参构造的对象,默认的名字是全类名
 @Import({DBHelper.class,User.class})
+@ImportResource(value = "classpath:bean1.xml")
 public class SpringConfig {
 
 //    默认返回的是方法的名字
