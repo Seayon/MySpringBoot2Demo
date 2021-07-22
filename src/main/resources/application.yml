@@ -3,3 +3,45 @@ server:
 mycar:
   price: 10000
   brand: BMW宝马
+debug: true
+spring:
+  banner:
+    image:
+      location: img.png
+person:
+  userName: "赵旭阳"
+  boss: false
+  birth: 1994/06/12
+  age: 27
+  originPet:
+    name: 肥肠
+    weight: 20.5
+  interests:
+    - "NBA 2K21"
+    - "双人同行"
+    - 篮球
+    - 游戏
+    - Coding
+  animal:
+    - 猫
+    - 🐈
+    - 狗
+    - 🐰
+  score:
+    - 数学: "我的世界 🐱 😁 🐇"
+    - English:
+        期末测验: 99
+        期中测验: 99
+    - Java:
+        {name: 小鸡,weight: 150.11} # 如果往 Object 里面放对象的话要用 花括号 括起来
+  salarys:
+    - 100.99
+    - 992222.200
+  allPets:
+    jq: #key 如果用中文会无法展示解析
+      - {name: 小鸡,weight: 150.11}
+      - {name: 小鸭,weight: 200.25}
+    brdw: [{name: 小猫,weight: 2000.00}]
+
+
+
