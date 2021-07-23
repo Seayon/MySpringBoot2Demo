@@ -1,3 +1,4 @@
+
 server:
   port: 8888
 mycar:
@@ -8,8 +9,12 @@ spring:
   banner:
     image:
       location: img.png
+  resources:
+#    static-locations: [classpath:/saeyon/] # 如果配置了自定义的资源路径,那么其他路径就失效啦
+    add-mappings: true
+    cache:
+      period: 12889
 person:
-  userName: "赵旭阳"
   boss: false
   birth: 1994/06/12
   age: 27
@@ -34,14 +39,16 @@ person:
         期中测验: 99
     - Java:
         {name: 小鸡,weight: 150.11} # 如果往 Object 里面放对象的话要用 花括号 括起来
+#  salarys:
+#    - 100.99
+#    - 992222.200
+#  allPets:
+#    jq: #key 如果用中文会无法展示解析
+#      - {name: 小鸡,weight: 150.11}
+#      - {name: 小鸭,weight: 200.25}
+#    brdw: [{name: 小猫,weight: 2000.00}]
+  user-name: 赵旭阳
   salarys:
-    - 100.99
-    - 992222.200
-  allPets:
-    jq: #key 如果用中文会无法展示解析
-      - {name: 小鸡,weight: 150.11}
-      - {name: 小鸭,weight: 200.25}
-    brdw: [{name: 小猫,weight: 2000.00}]
 
 
 
