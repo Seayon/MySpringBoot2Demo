@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 
 @Configuration(proxyBeanMethods = false) // 告诉 springbootve这是一个配置类 == 配置文件
 //proxyBeanMethods 默认是 true,full 模式,spring 会对这个配置类进行代理增强,后续有任何地方调用这个类的下面的获取 bean 的方法,都会返回容器中已经创建好的对象
@@ -34,6 +35,13 @@ public class SpringConfig {
     //    @Bean
     public Pet pet() {
         return new Pet("tomcat");
+    }
+
+    @Bean
+    public HiddenHttpMethodFilter hiddenHttpMethodFilter() {
+        HiddenHttpMethodFilter hiddenHttpMethodFilter = new HiddenHttpMethodFilter();
+        hiddenHttpMethodFilter.setMethodParam("_saeyon");
+        return hiddenHttpMethodFilter;
     }
 
 }

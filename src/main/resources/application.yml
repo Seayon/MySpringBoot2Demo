@@ -6,6 +6,11 @@ mycar:
   brand: BMW宝马
 debug: true
 spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        #### 这个默认没开启
+        enabled: true
   banner:
     image:
       location: img.png
